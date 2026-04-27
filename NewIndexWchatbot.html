@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社内ポータル - 書類検索システム</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Meiryo, sans-serif;
+            margin: 0;
+            background-color: #f4f7f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #004a87;
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 25px;
+            padding: 0 20px;
+        }
+
+        nav {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li { margin-bottom: 15px; }
+        nav a { text-decoration: none; color: #004a87; font-weight: bold; }
+
+        main {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            border-left: 6px solid #004a87;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            color: #004a87;
+        }
+
+        /* 書類リストのテーブルスタイル */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .pdf-link {
+            background-color: #d32f2f;
+            color: white;
+            padding: 6px 12px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .pdf-link:hover {
+            background-color: #b71c1c;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>社内ポータルサイト</h1>
+</header>
+
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="#">🏠 ホーム</a></li>
+            <li><a href="#">📝 各種申請</a></li>
+            <li><a href="#">🏢 組織案内</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2 class="section-title">主要書類ダウンロード</h2>
+        <p>最新の規定・マニュアル類です。右下のAIチャットからも検索可能です。</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>書類名</th>
+                    <th>内容説明</th>
+                    <th>リンク</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>2026年度健康診断ガイド</strong></td>
+                    <td class="description">健診の日程や場所、注意事項の資料です</td>
+                    <td><a href="https://www.google.com" target="_blank" class="pdf-link">PDFを開く</a></td>
+                </tr>
+                <tr>
+                    <td><strong>リモートワーク規定</strong></td>
+                    <td class="description">在宅勤務のルールや申請方法について</td>
+                    <td><a href="https://www.bing.com" target="_blank" class="pdf-link">PDFを開く</a></td>
+                </tr>
+                <tr>
+                    <td><strong>経費精算マニュアル</strong></td>
+                    <td class="description">交通費や備品購入の精算方法</td>
+                    <td><a href="https://www.microsoft.com" target="_blank" class="pdf-link">PDFを開く</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 40px; padding: 20px; background: #fffde7; border: 1px solid #fff59d; border-radius: 8px;">
+            <strong>💡 AIチャット活用ガイド</strong><br>
+            右下のアイコンをクリックして「健康診断について教えて」と入力すると、Geminiがこの一覧から最適な情報を抽出して回答します。
+        </div>
+    </main>
+</div>
+
+<script>
+ window.difyChatbotConfig = {
+  token: 'EkqVpCezc6mPXUNS',
+  inputs: {
+    // You can define the inputs from the Start node here
+    // key is the variable name
+    // e.g.
+    // name: "NAME"
+  },
+  systemVariables: {
+    // user_id: 'YOU CAN DEFINE USER ID HERE',
+    // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+  },
+  userVariables: {
+    // avatar_url: 'YOU CAN DEFINE USER AVATAR URL HERE',
+    // name: 'YOU CAN DEFINE USER NAME HERE',
+  },
+ }
+</script>
+<script
+ src="https://udify.app/embed.min.js"
+ id="EkqVpCezc6mPXUNS"
+ defer>
+</script>
+<style>
+  #dify-chatbot-bubble-button {
+    background-color: #1C64F2 !important;
+  }
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 40rem !important;
+  }
+</style>
+
+</body>
+</html>
